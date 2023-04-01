@@ -209,9 +209,89 @@ fun main() {
           } //кажется, что оно где-то рядом с правдой, но выдает Evaluation stopped while it's taking too long️
 		
 		
+fun main() {
+	val man: Person = Person()
+    val man2: Person  = Person(_fullName = "Некто") 
 
+    println(man2.fullName)
+    
+    man.fullName = "Товарищ Летягин"
+	man.age = 20   
+
+	println(man.fullName)
+    println(man.age)
+
+	man.move()
+    man.talk()
 	
+}
+
+class Person() {
+    val fullName: String = "Отсутствует"
+    val age: Int = 18
+    
+    fun move() {
+        print("Идет и ")
+    }
+    
+    fun talk() {
+        println("такой-то Person говорит")
+    }
+    
+class Person(_fullName: String) {
+    val fullName: String 
+    
+    
+    init {
+        fullName = _fullName
+    }
+} 
+}
 	
+	fun main() {
+      
+    class Engine{
+    	val power: Int = 1
+    	val manufacturer: String = "Отсутствует"
+    }
+    class Driver{
+        val FIO: String = "Отсутствует"
+        val stag: Double = 1.2
+    }
+    open class Car{
+    	val name: String = "Отсутствует"
+    	val tipe: String = "A"
+    	val weight: Double = 1.5
+    	val man: Driver = Driver()
+    	val motor: Engine = Engine()
+    
+    	fun start(){
+            println("Поехали")
+        }
+    	fun stop(){
+            println("Останавливаемся")
+        }
+    
+    	fun turnRight(){
+            println("Поворот направо")
+        }
+    	fun turnLeft(){
+            println("Поворот налево")
+        
+   		fun toString(){
+            
+            println("Авто: $name; $tipe; $weight; $man; $motor")
+        }
+        
+        class Lorry : Car() {
+            val loadCapacity: Double = 1.75
+        }
+        class SportCar : Car() {
+            val MaxSpeed: Int = 220
+        }
+        }
+    }
+    }
 	
 	
 	
